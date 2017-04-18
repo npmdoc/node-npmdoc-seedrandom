@@ -1,1 +1,39 @@
-{     "devDependencies": {         "seedrandom": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-seedrandom",     "homepage": "https://github.com/npmdoc/node-npmdoc-seedrandom",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-seedrandom.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [seedrandom (v2.4.3)](http://davidbau.com/archives/2010/01/30/random_seeds_coded_hints_and_quintillions.html)  [![npm package](https://img.shields.io/npm/v/npmdoc-seedrandom.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-seedrandom) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-seedrandom.svg)](https://travis-ci.org/npmdoc/node-npmdoc-seedrandom)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "seedrandom": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-seedrandom",
+    "keywords": [
+        "documentation",
+        "seedrandom"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_seedrandom.js",
+    "name": "npmdoc-seedrandom",
+    "nameAlias": "npmdoc_seedrandom",
+    "nameOriginal": "npmdoc-seedrandom",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-seedrandom.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
