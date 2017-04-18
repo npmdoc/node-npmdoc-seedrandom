@@ -1,0 +1,876 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://davidbau.com/archives/2010/01/30/random_seeds_coded_hints_and_quintillions.html">seedrandom (v2.4.3)</a>
+</h1>
+<h4>Seeded random number generator for Javascript.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.seedrandom">module seedrandom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.seedrandom">
+            function <span class="apidocSignatureSpan"></span>seedrandom
+            <span class="apidocSignatureSpan">(seed, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.alea">
+            function <span class="apidocSignatureSpan">seedrandom.</span>alea
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.toString">
+            function <span class="apidocSignatureSpan">seedrandom.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.tychei">
+            function <span class="apidocSignatureSpan">seedrandom.</span>tychei
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.xor128">
+            function <span class="apidocSignatureSpan">seedrandom.</span>xor128
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.xor4096">
+            function <span class="apidocSignatureSpan">seedrandom.</span>xor4096
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.xorshift7">
+            function <span class="apidocSignatureSpan">seedrandom.</span>xorshift7
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.xorwow">
+            function <span class="apidocSignatureSpan">seedrandom.</span>xorwow
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">seedrandom.</span>crypto</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.seedrandom.crypto">module seedrandom.crypto</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.crypto.randomBytes">
+            function <span class="apidocSignatureSpan">seedrandom.crypto.</span>randomBytes
+            <span class="apidocSignatureSpan">(width)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.seedrandom.seedrandom">module seedrandom.seedrandom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.seedrandom.seedrandom">
+            function <span class="apidocSignatureSpan">seedrandom.</span>seedrandom
+            <span class="apidocSignatureSpan">(seed, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.seedrandom.alea">
+            function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>alea
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.seedrandom.tychei">
+            function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>tychei
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.seedrandom.xor128">
+            function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>xor128
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.seedrandom.xor4096">
+            function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>xor4096
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.seedrandom.xorshift7">
+            function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>xorshift7
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.seedrandom.xorwow">
+            function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>xorwow
+            <span class="apidocSignatureSpan">(seed, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.seedrandom" id="apidoc.module.seedrandom">module seedrandom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.seedrandom" id="apidoc.element.seedrandom.seedrandom">
+        function <span class="apidocSignatureSpan"></span>seedrandom
+        <span class="apidocSignatureSpan">(seed, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function seedrandom(seed, options, callback) {
+  var key = [];
+  options = (options == true) ? { entropy: true } : (options || {});
+
+  // Flatten the seed string or build one from local entropy if needed.
+  var shortseed = mixkey(flatten(
+    options.entropy ? [seed, tostring(pool)] :
+    (seed == null) ? autoseed() : seed, 3), key);
+
+  // Use the seed to initialize an ARC4 generator.
+  var arc4 = new ARC4(key);
+
+  // This function returns a random double in [0, 1) that contains
+  // randomness in every bit of the mantissa of the IEEE 754 value.
+  var prng = function() {
+    var n = arc4.g(chunks),             // Start with a numerator n &lt; 2 ^ 48
+        d = startdenom,                 //   and denominator d = 2 ^ 48.
+        x = 0;                          //   and no 'extra last byte'.
+    while (n &lt; significance) {          // Fill up all significant digits by
+      n = (n + x) * width;              //   shifting numerator and
+      d *= width;                       //   denominator and generating a
+      x = arc4.g(1);                    //   new least-significant-byte.
+    }
+    while (n &gt;= overflow) {             // To avoid rounding up, before adding
+      n /= 2;                           //   last byte, shift everything
+      d /= 2;                           //   right using integer math until
+      x &gt;&gt;&gt;= 1;                         //   we have exactly the desired bits.
+    }
+    return (n + x) / d;                 // Form the number within [0, 1).
+  };
+
+  prng.int32 = function() { return arc4.g(4) | 0; }
+  prng.quick = function() { return arc4.g(4) / 0x100000000; }
+  prng.double = prng;
+
+  // Mix the randomness into accumulated entropy.
+  mixkey(tostring(arc4.S), pool);
+
+  // Calling convention: what to return as a function of prng, seed, is_math.
+  return (options.pass || callback ||
+      function(prng, seed, is_math_call, state) {
+        if (state) {
+          // Load the arc4 state from the given state if it has an S array.
+          if (state.S) { copy(state, arc4); }
+          // Only provide the .state method if requested via options.state.
+          prng.state = function() { return copy(arc4, {}); }
+        }
+
+        // If called as a method of Math (Math.seedrandom()), mutate
+        // Math.random because that is how seedrandom.js has worked since v1.0.
+        if (is_math_call) { math[rngname] = prng; return seed; }
+
+        // Otherwise, it is a newer calling convention, so return the
+        // prng directly.
+        else return prng;
+      })(
+  prng,
+  shortseed,
+  'global' in options ? options.global : (this == math),
+  options.state);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```html
+&lt;script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.3/seedrandom.min.js"&gt;
+&lt;/script&gt;
+```
+
+```js
+// Sets Math.random to a PRNG initialized using the given explicit seed.
+Math.<span class="apidocCodeKeywordSpan">seedrandom</span>('hello.');
+console.log(Math.random());          // Always 0.9282578795792454
+console.log(Math.random());          // Always 0.3752569768646784
+
+// Sets Math.random to an ARC4-based PRNG that is autoseeded using the
+// current time, dom state, and other accumulated local entropy.
+// The generated seed string is returned.
+Math.seedrandom();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.alea" id="apidoc.element.seedrandom.alea">
+        function <span class="apidocSignatureSpan">seedrandom.</span>alea
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  var xg = new Alea(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = xg.next;
+  prng.int32 = function() { return (xg.next() * 0x100000000) | 0; }
+  prng.double = function() {
+    return prng() + (prng() * 0x200000 | 0) * 1.1102230246251565e-16; // 2^-53
+  };
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.toString" id="apidoc.element.seedrandom.toString">
+        function <span class="apidocSignatureSpan">seedrandom.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return prng;
+}
+
+function Mash() {
+var n = 0xefc8249d;
+
+var mash = function(data) {
+  data = data.<span class="apidocCodeKeywordSpan">toString</span>();
+  for (var i = 0; i &lt; data.length; i++) {
+    n += data.charCodeAt(i);
+    var h = 0.02519603282416938 * n;
+    n = h &gt;&gt;&gt; 0;
+    h -= n;
+    h *= n;
+    n = h &gt;&gt;&gt; 0;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.tychei" id="apidoc.element.seedrandom.tychei">
+        function <span class="apidocSignatureSpan">seedrandom.</span>tychei
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.xor128" id="apidoc.element.seedrandom.xor128">
+        function <span class="apidocSignatureSpan">seedrandom.</span>xor128
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.xor4096" id="apidoc.element.seedrandom.xor4096">
+        function <span class="apidocSignatureSpan">seedrandom.</span>xor4096
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  if (seed == null) seed = +(new Date);
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (state.X) copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(rng());                  // Reasonably unpredictable.
+
+// Mixing accumulated entropy.
+rng = seedrandom('added entropy.', { entropy: true });
+console.log(rng());                  // As unpredictable as added entropy.
+
+// Using alternate algorithms, as listed above.
+var rng2 = seedrandom.<span class="apidocCodeKeywordSpan">xor4096</span>('hello.')
+console.log(rng2());
+```
+
+
+Require.js usage
+----------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.xorshift7" id="apidoc.element.seedrandom.xorshift7">
+        function <span class="apidocSignatureSpan">seedrandom.</span>xorshift7
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  if (seed == null) seed = +(new Date);
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (state.x) copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.xorwow" id="apidoc.element.seedrandom.xorwow">
+        function <span class="apidocSignatureSpan">seedrandom.</span>xorwow
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.seedrandom.crypto" id="apidoc.module.seedrandom.crypto">module seedrandom.crypto</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.crypto.randomBytes" id="apidoc.element.seedrandom.crypto.randomBytes">
+        function <span class="apidocSignatureSpan">seedrandom.crypto.</span>randomBytes
+        <span class="apidocSignatureSpan">(width)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function randomBytes(width) {
+  var out = new Uint8Array(width);
+  (global.crypto || global.msCrypto).getRandomValues(out);
+  return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.seedrandom.seedrandom" id="apidoc.module.seedrandom.seedrandom">module seedrandom.seedrandom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.seedrandom.seedrandom" id="apidoc.element.seedrandom.seedrandom.seedrandom">
+        function <span class="apidocSignatureSpan">seedrandom.</span>seedrandom
+        <span class="apidocSignatureSpan">(seed, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function seedrandom(seed, options, callback) {
+  var key = [];
+  options = (options == true) ? { entropy: true } : (options || {});
+
+  // Flatten the seed string or build one from local entropy if needed.
+  var shortseed = mixkey(flatten(
+    options.entropy ? [seed, tostring(pool)] :
+    (seed == null) ? autoseed() : seed, 3), key);
+
+  // Use the seed to initialize an ARC4 generator.
+  var arc4 = new ARC4(key);
+
+  // This function returns a random double in [0, 1) that contains
+  // randomness in every bit of the mantissa of the IEEE 754 value.
+  var prng = function() {
+    var n = arc4.g(chunks),             // Start with a numerator n &lt; 2 ^ 48
+        d = startdenom,                 //   and denominator d = 2 ^ 48.
+        x = 0;                          //   and no 'extra last byte'.
+    while (n &lt; significance) {          // Fill up all significant digits by
+      n = (n + x) * width;              //   shifting numerator and
+      d *= width;                       //   denominator and generating a
+      x = arc4.g(1);                    //   new least-significant-byte.
+    }
+    while (n &gt;= overflow) {             // To avoid rounding up, before adding
+      n /= 2;                           //   last byte, shift everything
+      d /= 2;                           //   right using integer math until
+      x &gt;&gt;&gt;= 1;                         //   we have exactly the desired bits.
+    }
+    return (n + x) / d;                 // Form the number within [0, 1).
+  };
+
+  prng.int32 = function() { return arc4.g(4) | 0; }
+  prng.quick = function() { return arc4.g(4) / 0x100000000; }
+  prng.double = prng;
+
+  // Mix the randomness into accumulated entropy.
+  mixkey(tostring(arc4.S), pool);
+
+  // Calling convention: what to return as a function of prng, seed, is_math.
+  return (options.pass || callback ||
+      function(prng, seed, is_math_call, state) {
+        if (state) {
+          // Load the arc4 state from the given state if it has an S array.
+          if (state.S) { copy(state, arc4); }
+          // Only provide the .state method if requested via options.state.
+          prng.state = function() { return copy(arc4, {}); }
+        }
+
+        // If called as a method of Math (Math.seedrandom()), mutate
+        // Math.random because that is how seedrandom.js has worked since v1.0.
+        if (is_math_call) { math[rngname] = prng; return seed; }
+
+        // Otherwise, it is a newer calling convention, so return the
+        // prng directly.
+        else return prng;
+      })(
+  prng,
+  shortseed,
+  'global' in options ? options.global : (this == math),
+  options.state);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```html
+&lt;script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.3/seedrandom.min.js"&gt;
+&lt;/script&gt;
+```
+
+```js
+// Sets Math.random to a PRNG initialized using the given explicit seed.
+Math.<span class="apidocCodeKeywordSpan">seedrandom</span>('hello.');
+console.log(Math.random());          // Always 0.9282578795792454
+console.log(Math.random());          // Always 0.3752569768646784
+
+// Sets Math.random to an ARC4-based PRNG that is autoseeded using the
+// current time, dom state, and other accumulated local entropy.
+// The generated seed string is returned.
+Math.seedrandom();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.seedrandom.alea" id="apidoc.element.seedrandom.seedrandom.alea">
+        function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>alea
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  var xg = new Alea(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = xg.next;
+  prng.int32 = function() { return (xg.next() * 0x100000000) | 0; }
+  prng.double = function() {
+    return prng() + (prng() * 0x200000 | 0) * 1.1102230246251565e-16; // 2^-53
+  };
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.seedrandom.tychei" id="apidoc.element.seedrandom.seedrandom.tychei">
+        function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>tychei
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.seedrandom.xor128" id="apidoc.element.seedrandom.seedrandom.xor128">
+        function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>xor128
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.seedrandom.xor4096" id="apidoc.element.seedrandom.seedrandom.xor4096">
+        function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>xor4096
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  if (seed == null) seed = +(new Date);
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (state.X) copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(rng());                  // Reasonably unpredictable.
+
+// Mixing accumulated entropy.
+rng = seedrandom('added entropy.', { entropy: true });
+console.log(rng());                  // As unpredictable as added entropy.
+
+// Using alternate algorithms, as listed above.
+var rng2 = seedrandom.<span class="apidocCodeKeywordSpan">xor4096</span>('hello.')
+console.log(rng2());
+```
+
+
+Require.js usage
+----------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.seedrandom.xorshift7" id="apidoc.element.seedrandom.seedrandom.xorshift7">
+        function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>xorshift7
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  if (seed == null) seed = +(new Date);
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (state.x) copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.seedrandom.seedrandom.xorwow" id="apidoc.element.seedrandom.seedrandom.xorwow">
+        function <span class="apidocSignatureSpan">seedrandom.seedrandom.</span>xorwow
+        <span class="apidocSignatureSpan">(seed, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function impl(seed, opts) {
+  var xg = new XorGen(seed),
+      state = opts &amp;&amp; opts.state,
+      prng = function() { return (xg.next() &gt;&gt;&gt; 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() &gt;&gt;&gt; 11,
+          bot = (xg.next() &gt;&gt;&gt; 0) / 0x100000000,
+          result = (top + bot) / (1 &lt;&lt; 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
