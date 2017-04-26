@@ -1,6 +1,6 @@
 # npmdoc-seedrandom
 
-#### api documentation for  [seedrandom (v2.4.3)](http://davidbau.com/archives/2010/01/30/random_seeds_coded_hints_and_quintillions.html)  [![npm package](https://img.shields.io/npm/v/npmdoc-seedrandom.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-seedrandom) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-seedrandom.svg)](https://travis-ci.org/npmdoc/node-npmdoc-seedrandom)
+#### basic api documentation for  [seedrandom (v2.4.3)](http://davidbau.com/archives/2010/01/30/random_seeds_coded_hints_and_quintillions.html)  [![npm package](https://img.shields.io/npm/v/npmdoc-seedrandom.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-seedrandom) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-seedrandom.svg)](https://travis-ci.org/npmdoc/node-npmdoc-seedrandom)
 
 #### Seeded random number generator for Javascript.
 
@@ -88,7 +88,8 @@
     "scripts": {
         "test": "grunt travis"
     },
-    "version": "2.4.3"
+    "version": "2.4.3",
+    "bin": {}
 }
 ```
 
