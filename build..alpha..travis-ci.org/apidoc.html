@@ -81,15 +81,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.seedrandom.toString">
-            function <span class="apidocSignatureSpan">seedrandom.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.seedrandom.tychei">
             function <span class="apidocSignatureSpan">seedrandom.</span>tychei
             <span class="apidocSignatureSpan">(seed, opts)</span>
@@ -339,37 +330,6 @@ Math.seedrandom();
   return prng;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.seedrandom.toString" id="apidoc.element.seedrandom.toString">
-        function <span class="apidocSignatureSpan">seedrandom.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-return prng;
-}
-
-function Mash() {
-var n = 0xefc8249d;
-
-var mash = function(data) {
-  data = data.<span class="apidocCodeKeywordSpan">toString</span>();
-  for (var i = 0; i &#x3c; data.length; i++) {
-    n += data.charCodeAt(i);
-    var h = 0.02519603282416938 * n;
-    n = h &#x3e;&#x3e;&#x3e; 0;
-    h -= n;
-    h *= n;
-    n = h &#x3e;&#x3e;&#x3e; 0;
-...</pre></li>
     </ul>
 
 
